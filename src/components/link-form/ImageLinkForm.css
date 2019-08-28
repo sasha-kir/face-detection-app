@@ -1,0 +1,64 @@
+.url-form-main-div {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	justify-content: center;
+	font-family: monospace, sans-serif;
+	background: linear-gradient(90deg, rgba(95,199,230,1) 0%, rgba(234,244,244,1) 100%);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -30px;
+	width: 920px;
+}
+
+.instructions {
+	font-family: 'orbitronmedium', sans-serif;
+	text-transform: uppercase;
+	font-size: 1.3rem;
+	color:  #212121;
+    overflow: hidden;
+    max-width: 880px;
+    margin-bottom: -20px;
+}
+
+.url-form {
+	display: grid;
+	grid-template-columns: 13fr 2fr;
+	align-items: center;
+	width: 880px;
+}
+
+.url-form input:invalid {
+	color: #212121;
+}
+
+.url-form input:invalid ~ .cube .cube-inner {
+	background-color: #f7cee0;
+	border: 2px dashed #212121;
+}
+
+.url-form .block-input {
+	margin-top: 5px;
+	align-self: end;
+}
+
+.fwd-text {
+	font-family: 'symbolsigns', sans-serif;
+	font-size: 28px;
+}
+
+.fwd-button {
+  color: #212121;
+  text-shadow: 0.5px 0.5px black;
+  background: linear-gradient(90deg, rgba(95,199,230,1) 0%, rgba(234,244,244,1) 100%);
+}
+
+.fwd-button .cube-inner, 
+.fwd-button .cube-inner,
+.fwd-button .cube-right-inner,
+.fwd-button .cube-top-inner {
+  top: 100%;
+}
+
+.url-form .block-button {
+	margin-top: 4px;
+}

@@ -1,13 +1,159 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: 'orbitronmedium';
+    src: url('./fonts/orbitron/orbitron.medium-webfont.woff2') format('woff2'),
+         url('./fonts/orbitron/orbitron.medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+    font-family: 'symbolsigns';
+    src: url('./fonts/symbol-signs/symbol-signs-webfont.woff2') format('woff2'),
+         url('./fonts/symbol-signs/symbol-signs-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #151515;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  /*font-family: 'Righteous', cursive;*/
+  font-family: 'orbitronmedium', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* adapted from code by marko https://codepen.io/marko-zub/ */
+
+/* form */
+
+.form-element input {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+}
+
+
+.form-element input:hover, .form-element input:focus {
+  outline: none;
+  border: 0;
+}
+
+/* buttons */
+
+button {
+  cursor: pointer;
+}
+
+.block-button {
+  width: 100%;
+  display: block;
+  background: transparent;
+  outline: none;
+  border: 0;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-family: 'orbitronmedium', monospace;
+  font-size: 16px;
+}
+
+.button-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* cube element */
+
+.block-cube {
+  position: relative;
+}
+
+.cube-top {
+  position: absolute;
+  height: 10px;
+  bottom: 100%;
+  left: 5px;
+  right: -5px;
+  transform: skew(-45deg, 0);
+  margin: 0;
+}
+
+.cube-top-inner {
+  bottom: 0;
+}
+
+.cube-right {
+  position: absolute;
+  top: -5px;
+  z-index: 0;
+  bottom: 5px;
+  width: 10px;
+  left: 100%;
+  transform: skew(0, -45deg);
+}
+
+.cube-right-inner {
+  left: 0;
+}
+
+.cube {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.cube-inner, .cube-right-inner, .cube-top-inner {
+  background: #212121;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.cube-top, .cube-right, .cube {
+  background: rgba(255, 255, 255, 1);
+/*  transition: background 0.2s ease-in-out;*/
+}
+
+button .cube-top, button .cube-right, button .cube {
+  background: linear-gradient(90deg, rgba(95,199,230,1) 0%, rgba(234,244,244,1) 100%);
+}
+
+/* make light bg appear */
+.block-input input:focus ~ .cube-right .cube-right-inner, 
+.block-input input:focus ~ .cube-top .cube-top-inner {
+  top: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* make cube border lighter */
+/*.block-input:focus .cube-top,
+.block-input:focus .cube-right,
+.block-input:focus .cube, 
+.block-input:hover .cube-top,
+.block-input:hover .cube-right,
+.block-input:hover .cube {
+  background: rgba(255, 255, 255, 0.8);
+}*/

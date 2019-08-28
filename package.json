@@ -1,11 +1,20 @@
 {
-  "name": "facerecognition",
+  "name": "face-detection-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint": "^6.1.0",
+    "particlesjs": "^2.2.3",
     "react": "^16.9.0",
+    "react-alert": "^5.5.0",
+    "react-alert-template-basic": "^1.0.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-particles-js": "^2.7.0",
+    "react-scripts": "3.1.1",
+    "react-tilt": "^0.1.4",
+    "react-transition-group": "^2.9.0",
+    "tachyons": "^4.11.1",
+    "typescript": "^3.5.3"
   },
   "scripts": {
     "start": "react-scripts start",

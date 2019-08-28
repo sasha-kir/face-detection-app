@@ -1,0 +1,80 @@
+/* adapted from code by marko https://codepen.io/marko-zub/ */
+
+.sign-in-main-div {
+	height: 90vh;
+}
+
+.sign-in-wrapper {
+	width: 450px;
+	margin: auto;
+	align-self: center;
+	background: #212121;
+	box-shadow: 0 0 15px rgba( 255, 255, 255, 0.2 );
+}
+
+.sign-in-form {
+  width: 300px;
+  padding: 7px 20px 20px;
+  margin: 0 auto;
+}
+
+.sign-in-form .form-element {
+  margin: 0 0 24px;
+}
+
+.sign-in-form .form-element input {
+	padding: 14px 16px;
+}  
+
+.sign-in-form .block-button {
+	padding: 14px 16px;
+}
+
+.login-text {
+	font-size: 18px;
+}
+
+.sign-in-form .block-button:hover, 
+.sign-in-form .block-button:focus {
+  color: #212121;
+  text-shadow: 0.5px 0.5px black;
+  background: linear-gradient(90deg, rgba(95,199,230,1) 0%, rgba(234,244,244,1) 100%);
+}
+
+.sign-in-form .block-button:focus .cube-inner, 
+.sign-in-form .block-button:hover .cube-inner {
+  top: 100%;
+}
+
+.sign-in-form .block-button:focus .cube-right-inner,
+.sign-in-form .block-button:focus .cube-top-inner,
+.sign-in-form .block-button:hover .cube-right-inner,
+.sign-in-form .block-button:hover .cube-top-inner {
+  top: 100%;
+}
+
+/* https://ianlunn.github.io/Hover/ */
+/*@keyframes hvr-ripple-out {
+  100% {
+    top: -15px;
+    right: -20px;
+    bottom: -12px;
+    left: -10px;
+    opacity: 0;
+  }
+}
+
+.hvr-ripple-out:before {
+  content: '';
+  position: absolute;
+  border: #e1e1e1 solid 6px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation-duration: 0.2s;
+}
+
+.hvr-ripple-out:active:before {
+  animation-name: hvr-ripple-out;
+}*/
