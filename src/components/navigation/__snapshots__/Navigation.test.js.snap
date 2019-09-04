@@ -17,6 +17,7 @@ exports[`Navigation renders correctly 1`] = `
   </p>
   <p
     className="f3 link dim white underline pa3 pointer"
+    id="sign-out"
     onClick={[Function]}
   >
     Sign Out
