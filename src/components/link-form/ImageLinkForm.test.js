@@ -25,7 +25,7 @@ describe('ImageLinkForm', () => {
   });
 
   it('renders correctly', () => {
-    const wrapper = shallow(<ImageLinkForm onInputChange={inputFunc} onImageSubmit={submitFunc} />)
+    const wrapper = shallow(<ImageLinkForm />)
     expect(wrapper).toMatchSnapshot();
   });
 
