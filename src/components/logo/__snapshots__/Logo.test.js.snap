@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo should render correctly 1`] = `
+<div
+  className="logo ma4 mt0"
+>
+  <Tilt
+    className="Tilt br2 shadow-2"
+    options={
+      Object {
+        "max": 55,
+      }
+    }
+    style={
+      Object {
+        "height": 150,
+        "width": 150,
+      }
+    }
+  >
+    <div
+      className="Tilt-inner"
+    >
+      <img
+        alt="logo: a blue planet"
+        src="planet.png"
+      />
+    </div>
+  </Tilt>
+</div>
+`;
