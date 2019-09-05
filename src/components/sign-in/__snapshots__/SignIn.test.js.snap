@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn renders correctly 1`] = `
+<ForwardRef(WithAlert(SignIn))>
+  <SignIn>
+    <div
+      className="sign-in-main-div center-content"
+    >
+      <div
+        className="sign-in-wrapper"
+      >
+        <form
+          className="sign-in-form"
+        >
+          <div
+            className="form-element f4 white"
+          >
+            <h1>
+              Sign In
+            </h1>
+          </div>
+          <div
+            className="form-element block-cube block-input"
+          >
+            <input
+              id="username"
+              onChange={[Function]}
+              placeholder="username"
+              required={true}
+              type="text"
+            />
+            <div
+              className="cube-top"
+            >
+              <div
+                className="cube-top-inner"
+              />
+            </div>
+            <div
+              className="cube-right"
+            >
+              <div
+                className="cube-right-inner"
+              />
+            </div>
+            <div
+              className="cube"
+            >
+              <div
+                className="cube-inner"
+              />
+            </div>
+          </div>
+          <div
+            className="form-element block-cube block-input"
+          >
+            <input
+              id="password"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="password"
+              required={true}
+              type="password"
+            />
+            <div
+              className="cube-top"
+            >
+              <div
+                className="cube-top-inner"
+              />
+            </div>
+            <div
+              className="cube-right"
+            >
+              <div
+                className="cube-right-inner"
+              />
+            </div>
+            <div
+              className="cube"
+            >
+              <div
+                className="cube-inner"
+              />
+            </div>
+          </div>
+          <button
+            className="block-button block-cube grow"
+            onClick={[Function]}
+            type="button"
+          >
+            <div
+              className="cube-top"
+            >
+              <div
+                className="cube-top-inner"
+              />
+            </div>
+            <div
+              className="cube-right"
+            >
+              <div
+                className="cube-right-inner"
+              />
+            </div>
+            <div
+              className="cube"
+            >
+              <div
+                className="cube-inner"
+              />
+            </div>
+            <div
+              className="login-text button-text"
+            >
+              Log In
+            </div>
+          </button>
+          <div
+            className="link dim pointer mt4 mb2 f5 white center-content"
+            onClick={[Function]}
+          >
+            Create an account
+          </div>
+        </form>
+      </div>
+    </div>
+  </SignIn>
+</ForwardRef(WithAlert(SignIn))>
+`;
