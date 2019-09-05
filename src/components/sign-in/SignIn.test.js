@@ -1,5 +1,5 @@
 import React from 'react';
-import {act} from 'react-dom/test-utils';  
+import { act } from 'react-dom/test-utils';  
 import { mount } from 'enzyme';
 import nock from 'nock';
 import waitUntil from 'async-wait-until';
@@ -31,6 +31,10 @@ describe('SignIn', () => {
         const wrapper= mount(<SignIn />);
         expect(wrapper).toMatchSnapshot();
         wrapper.unmount();
+    });
+    it('routes to Register', () => {
+        component.find('#register-link').simulate('click');
+        expect(onRouteChange).toHaveBeenCalledWith('register');
     });
     it('saves username and password to state', () => {
         const form = component.find('SignIn');

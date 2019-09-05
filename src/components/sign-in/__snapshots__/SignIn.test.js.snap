@@ -118,6 +118,7 @@ exports[`SignIn renders correctly 1`] = `
           </button>
           <div
             className="link dim pointer mt4 mb2 f5 white center-content"
+            id="register-link"
             onClick={[Function]}
           >
             Create an account

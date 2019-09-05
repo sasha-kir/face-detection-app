@@ -114,7 +114,7 @@ class SignIn extends Component {
 					    <div className="login-text button-text">Log In</div>
 					  </button>
 
-					  <div className="link dim pointer mt4 mb2 f5 white center-content" 
+					  <div id="register-link" className="link dim pointer mt4 mb2 f5 white center-content" 
 					       onClick={() => onRouteChange("register")}>
 					  	Create an account
 					  </div>
