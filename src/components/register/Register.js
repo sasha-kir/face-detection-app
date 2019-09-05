@@ -3,13 +3,25 @@ import "./Register.css";
 import { withAlert } from "react-alert";
 
 class Register extends Component {
+	_isMounted = false;
+
 	constructor(props) {
 		super(props);
 		this.state = {
 			name: "",
 			email: "",
-			password: ""
+			password: "",
+			dataSubmitted: false,
+			dataReceived: null
 		}
+	}
+
+	componentDidMount() {
+		this._isMounted = true;
+	}
+
+	componentWillUnmount() {
+		this._isMounted = false;
 	}
 
 	onNameChange = (event) => {
@@ -32,13 +44,13 @@ class Register extends Component {
 
 	handleSubmit = () => {
 		const { name, email, password } = this.state;
-		const emailInput = document.getElementById("email-input");
-
+		const emailInput = this.refs.email;
 		if (!name || !email || !password) {
 			this.props.alert.show("Please fill in all appropriate fields");
 		} else if (!emailInput.checkValidity()) {
 			this.props.alert.show("Please provide a valid email");
 		} else {
+			this.setState({ dataSubmitted: true });
 			fetch("http://localhost:3001/register", {
 				method: "post",
 				headers: {'Content-Type': 'application/json'},
@@ -58,10 +70,16 @@ class Register extends Component {
 			  	}
 			  })
 			  .then(user => {
+				  	if (this._isMounted) {
+						this.setState({ dataReceived: true });
+					}
 			      	this.props.loadUser(user);
 			        this.props.onRouteChange("home");
 			  })
 			  .catch(err => {
+				if (this._isMounted) {
+					this.setState({ dataReceived: false });
+				}
 			  	this.props.alert.error("User with this email already exists");
 			  })
 		}
@@ -79,7 +97,7 @@ class Register extends Component {
 					  </div>
 
 					  <div className="form-element block-cube block-input">
-					    <input placeholder="your name" type="text" 
+					    <input id="name" placeholder="your name" type="text" 
 					    	   onChange={this.onNameChange} required />
 					    <div className="cube-top"><div className="cube-top-inner"></div></div>
 					    <div className="cube-right"><div className="cube-right-inner"></div></div>
@@ -87,7 +105,7 @@ class Register extends Component {
 					  </div>
 
 					  <div className="form-element block-cube block-input">
-					    <input id="email-input" placeholder="email" type="text"
+					    <input id="email" ref="email" placeholder="email" type="text"
 					           pattern={emailPattern} onChange={this.onEmailChange} required />
 					    <div className="cube-top"><div className="cube-top-inner"></div></div>
 					    <div className="cube-right"><div className="cube-right-inner"></div></div>
@@ -95,7 +113,7 @@ class Register extends Component {
 					  </div>
 
 					  <div className="form-element block-cube block-input">
-					    <input placeholder="password" type="password" 
+					    <input id="password" placeholder="password" type="password" 
 					           onChange={this.onPasswordChange} 
 					           onKeyDown={this.handleEnter} required />
 					    <div className="cube-top"><div className="cube-top-inner"></div></div>
@@ -111,7 +129,7 @@ class Register extends Component {
 					    <div className="login-text button-text">Sign Up</div>
 					  </button>
 
-					  <div className="link dim pointer mt4 mb1 f5 white center-content" 
+					  <div id="signin-link" className="link dim pointer mt4 mb1 f5 white center-content" 
 					       onClick={() => onRouteChange("sign-in")}>
 					  	Go back
 					  </div>
