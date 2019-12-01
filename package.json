@@ -1,6 +1,7 @@
 {
   "name": "face-detection-app",
   "version": "0.1.0",
+  "homepage": "http://139.59.212.153/face-detection",
   "private": true,
   "dependencies": {
     "eslint": "^6.1.0",
