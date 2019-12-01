@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register renders correctly 1`] = `
+<ForwardRef(WithAlert(Register))>
+  <Register>
+    <div
+      className="sign-in-main-div center-content"
+    >
+      <div
+        className="sign-in-wrapper"
+      >
+        <form
+          className="register-form sign-in-form"
+        >
+          <div
+            className="form-element f4 white"
+          >
+            <h1>
+              Registration
+            </h1>
+          </div>
+          <div
+            className="form-element block-cube block-input"
+          >
+            <input
+              id="name"
+              onChange={[Function]}
+              placeholder="your name"
+              required={true}
+              type="text"
+            />
+            <div
+              className="cube-top"
+            >
+              <div
+                className="cube-top-inner"
+              />
+            </div>
+            <div
+              className="cube-right"
+            >
+              <div
+                className="cube-right-inner"
+              />
+            </div>
+            <div
+              className="cube"
+            >
+              <div
+                className="cube-inner"
+              />
+            </div>
+          </div>
+          <div
+            className="form-element block-cube block-input"
+          >
+            <input
+              id="email"
+              onChange={[Function]}
+              pattern="^[a-zA-Z0-9\\\\.\\\\-_]+@[a-z]+\\\\.[a-z]{2,3}$"
+              placeholder="email"
+              required={true}
+              type="text"
+            />
+            <div
+              className="cube-top"
+            >
+              <div
+                className="cube-top-inner"
+              />
+            </div>
+            <div
+              className="cube-right"
+            >
+              <div
+                className="cube-right-inner"
+              />
+            </div>
+            <div
+              className="cube"
+            >
+              <div
+                className="cube-inner"
+              />
+            </div>
+          </div>
+          <div
+            className="form-element block-cube block-input"
+          >
+            <input
+              id="password"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="password"
+              required={true}
+              type="password"
+            />
+            <div
+              className="cube-top"
+            >
+              <div
+                className="cube-top-inner"
+              />
+            </div>
+            <div
+              className="cube-right"
+            >
+              <div
+                className="cube-right-inner"
+              />
+            </div>
+            <div
+              className="cube"
+            >
+              <div
+                className="cube-inner"
+              />
+            </div>
+          </div>
+          <button
+            className="block-button block-cube grow"
+            onClick={[Function]}
+            type="button"
+          >
+            <div
+              className="cube-top"
+            >
+              <div
+                className="cube-top-inner"
+              />
+            </div>
+            <div
+              className="cube-right"
+            >
+              <div
+                className="cube-right-inner"
+              />
+            </div>
+            <div
+              className="cube"
+            >
+              <div
+                className="cube-inner"
+              />
+            </div>
+            <div
+              className="login-text button-text"
+            >
+              Sign Up
+            </div>
+          </button>
+          <div
+            className="link dim pointer mt4 mb1 f5 white center-content"
+            id="signin-link"
+            onClick={[Function]}
+          >
+            Go back
+          </div>
+        </form>
+      </div>
+    </div>
+  </Register>
+</ForwardRef(WithAlert(Register))>
+`;

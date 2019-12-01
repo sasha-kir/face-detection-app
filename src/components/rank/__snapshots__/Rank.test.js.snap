@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rank renders correctly 1`] = `
+<div
+  className="center-content"
+  style={
+    Object {
+      "justifySelf": "start",
+    }
+  }
+>
+  <div
+    className="center-content white f3"
+    id="name"
+  >
+    undefined, your current entry count is
+      
+  </div>
+  <div
+    className="white f1"
+    id="entries"
+  />
+</div>
+`;

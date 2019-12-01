@@ -3,13 +3,27 @@ import "./SignIn.css";
 import { withAlert } from "react-alert";
 
 class SignIn extends Component {
+	_isMounted = false;
 
 	constructor(props) {
 		super(props);
+		this.handleEnter = this.handleEnter.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.abortController = new AbortController();
 		this.state = {
 			username: "",
-			password: ""
+			password: "",
+			dataSubmitted: false,
+			dataReceived: null
 		};
+	}
+
+	componentDidMount() {
+		this._isMounted = true;
+	}
+
+	componentWillUnmount() {
+		this._isMounted = false;
 	}
 
 	onUsernameChange = (event) => {
@@ -20,17 +34,18 @@ class SignIn extends Component {
 		this.setState({ password: event.target.value });
 	}
 
-	handleEnter = (event) => {
+	handleEnter(event) {
    		if (event.key === "Enter") {
    			this.handleSubmit();
    		}
    	}
-
+	
 	handleSubmit = () => {
 		const { username, password } = this.state;
 		if (!username || !password) {
 			this.props.alert.show("Please fill in all appropriate fields");
 		} else {
+			this.setState({ dataSubmitted: true });
 			fetch(process.env.REACT_APP_SERVER_URL + "/sign-in", {
 				method: "post",
 				headers: {'Content-Type': 'application/json'},
@@ -49,10 +64,16 @@ class SignIn extends Component {
 			  	}
 			  })
 			  .then(user => {
+					if (this._isMounted) {
+						this.setState({ dataReceived: true });
+					}
 			      	this.props.loadUser(user);
 			        this.props.onRouteChange("home");
 			  })
 			  .catch(err => {
+				if (this._isMounted) {
+					this.setState({ dataReceived: false });
+				}
 			  	this.props.alert.error("Wrong username or password");
 			  })
 		}
@@ -69,7 +90,7 @@ class SignIn extends Component {
 					  </div>
 
 					  <div className="form-element block-cube block-input">
-					    <input placeholder="username" type="text" 
+					    <input id="username" placeholder="username" type="text" 
 					           onChange={this.onUsernameChange} required />
 					    <div className="cube-top"><div className="cube-top-inner"></div></div>
 					    <div className="cube-right"><div className="cube-right-inner"></div></div>
@@ -77,7 +98,7 @@ class SignIn extends Component {
 					  </div>
 
 					  <div className="form-element block-cube block-input">
-					    <input placeholder="password" type="password" 
+					    <input id="password" placeholder="password" type="password" 
 					           onChange={this.onPasswordChange} 
 					           onKeyDown={this.handleEnter} required />
 					    <div className="cube-top"><div className="cube-top-inner"></div></div>
@@ -93,7 +114,7 @@ class SignIn extends Component {
 					    <div className="login-text button-text">Log In</div>
 					  </button>
 
-					  <div className="link dim pointer mt4 mb2 f5 white center-content" 
+					  <div id="register-link" className="link dim pointer mt4 mb2 f5 white center-content" 
 					       onClick={() => onRouteChange("register")}>
 					  	Create an account
 					  </div>

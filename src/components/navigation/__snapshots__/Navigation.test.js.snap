@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation renders correctly 1`] = `
+<nav
+  style={
+    Object {
+      "display": "flex",
+      "justifyContent": "flex-end",
+      "marginBottom": "-70px",
+    }
+  }
+>
+  <p
+    className="f3 link dim white underline pa3 pointer"
+  >
+    Home
+  </p>
+  <p
+    className="f3 link dim white underline pa3 pointer"
+    id="sign-out"
+    onClick={[Function]}
+  >
+    Sign Out
+  </p>
+</nav>
+`;
