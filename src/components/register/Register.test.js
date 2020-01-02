@@ -7,7 +7,6 @@ import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from '../alert-template/react-alert-custom-template';
 
 import Register from './Register';
-import { idText } from 'typescript';
 
 const loadUser = jest.fn();
 const onRouteChange = jest.fn();
