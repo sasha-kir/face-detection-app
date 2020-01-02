@@ -88,7 +88,7 @@ class App extends Component {
 
     onImageSubmit = () => {
       this.setState({ imageUrl: this.state.input, boundingBoxes: [] });
-      fetch("http://localhost:3001/detect", {
+      fetch(process.env.REACT_APP_SERVER_URL+ "/detect", {
             method: "post",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ url: this.state.input })
@@ -96,7 +96,7 @@ class App extends Component {
         .then(response => response.json())
         .then(data => {
           this.calculateFaceLocations(data);
-          fetch("http://localhost:3001/new-entry", {
+          fetch(process.env.REACT_APP_SERVER_URL + "/new-entry", {
             method: "put",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ id: this.state.user.id })

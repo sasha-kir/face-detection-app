@@ -46,7 +46,7 @@ class SignIn extends Component {
 			this.props.alert.show("Please fill in all appropriate fields");
 		} else {
 			this.setState({ dataSubmitted: true });
-			fetch("http://localhost:3001/sign-in", {
+			fetch(process.env.REACT_APP_SERVER_URL + "/sign-in", {
 				method: "post",
 				headers: {'Content-Type': 'application/json'},
 				body: JSON.stringify({
