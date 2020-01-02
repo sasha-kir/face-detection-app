@@ -74,7 +74,7 @@ class SignIn extends Component {
 				if (this._isMounted) {
 					this.setState({ dataReceived: false });
 				}
-			  	this.props.alert.error("Wrong username or password");
+			  	this.props.alert.error("Wrong email or password");
 			  })
 		}
 	}
@@ -90,7 +90,7 @@ class SignIn extends Component {
 					  </div>
 
 					  <div className="form-element block-cube block-input">
-					    <input id="username" placeholder="username" type="text" 
+					    <input id="username" placeholder="email" type="text" 
 					           onChange={this.onUsernameChange} required />
 					    <div className="cube-top"><div className="cube-top-inner"></div></div>
 					    <div className="cube-right"><div className="cube-right-inner"></div></div>
