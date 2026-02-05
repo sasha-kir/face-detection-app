@@ -4,7 +4,7 @@
   "homepage": "https://139.59.212.153/face-detection",
   "private": true,
   "dependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^9.26.0",
     "particlesjs": "^2.2.3",
     "react": "^16.12.0",
     "react-alert": "^5.5.0",
